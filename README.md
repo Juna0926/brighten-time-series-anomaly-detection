@@ -13,9 +13,9 @@
 
 This study asks whether changes in a person's passive smartphone-sensing pattern can provide an earlier signal of subsequent change in depressive symptoms. The analysis is intentionally framed as a **within-person time-series problem** rather than a population-only classification problem.
 
-The current study uses **PHQ-9 as the primary outcome**. Passive sensing variables are organized as participant-level daily sequences so that temporal order is preserved instead of reducing each week to a single average feature vector.
+The current study uses **PHQ-9 as the primary outcome**. Passive sensing variables are organized as participant-level daily sequences so that temporal order is preserved instead of reducing each observation period to a single averaged feature vector.
 
-![BRIGHTEN dataset overview](assets/figure-01-dataset-overview.svg)
+![BRIGHTEN dataset overview](assets/figure-01-dataset-overview.webp)
 
 ## Research question
 
@@ -38,15 +38,15 @@ The project uses the BRIGHTEN digital-phenotyping datasets:
 
 ## Analytical framework
 
-![Research objective](assets/figure-02-research-objective.svg)
+![Research objective](assets/figure-02-research-objective.webp)
 
-1. **Participant-level sequence construction** - preserve daily ordering of mobility, communication, and device-activity features.
+1. **Participant-level sequence construction** - preserve daily ordering of passive-sensing features.
 2. **Habitual baseline estimation** - characterize each participant's typical behavioral pattern.
 3. **Within-person anomaly detection** - identify short windows in which behavior deviates from that baseline.
 4. **Temporal linkage** - test whether anomaly windows precede subsequent PHQ-9 change.
 5. **Robustness and replication** - vary anomaly definitions / prediction horizons and reproduce the analysis in BRIGHTEN V2.
 
-![Sequential representation](assets/figure-03-sequential-representation.svg)
+![Sequential representation](assets/figure-03-sequential-representation.webp)
 
 ## Current status
 
@@ -68,12 +68,13 @@ Population-level models are useful for estimating average risk, but they can obs
 
 ## Project outputs
 
-- [`outputs/PROJECT_OUTPUTS.md`](outputs/PROJECT_OUTPUTS.md) - public-safe output manifest and methodological provenance.
+- [`outputs/methodology-seminar-public-excerpt.pdf`](outputs/methodology-seminar-public-excerpt.pdf) - public-safe excerpt from the methodology seminar material that documents the dataset framing and sequence-preserving analysis direction.
+- [`outputs/PROJECT_OUTPUTS.md`](outputs/PROJECT_OUTPUTS.md) - provenance, scope, and release notes for the public artifacts.
 - Original BRIGHTEN participant-level data are not included.
 
 ## Repository scope
 
-This repository is a **research portfolio repository**. It documents the study design, selected figures, and public-safe research artifacts. Analysis code will only be published when it can be released without violating dataset-use restrictions and after the analysis interface is stabilized.
+This repository is a **research portfolio repository**. It documents the study design, selected source-derived figures, and public-safe research artifacts. Analysis code will only be published when it can be released without violating dataset-use restrictions and after the analysis interface is stabilized.
 
 ---
 

@@ -1,38 +1,43 @@
-# BRIGHTEN Time-Series Behavioral Anomaly Detection
+# Longitudinal Behavioral Anomaly Detection for Depression Monitoring Using Passive Smartphone Sensing Data
 
-> Personalized depression monitoring from passive smartphone sensing, with PHQ-9 as the clinical outcome and within-person behavioral change as the central signal.
+> Longitudinal digital-health research using passive smartphone sensing to predict PHQ-9–based depression severity and test whether individualized behavioral anomalies precede subsequent symptom change.
 
 **Period:** Aug. 2026 - Present  
 **Affiliation:** Service Intelligence Laboratory, Ajou University  
-**Role:** Undergraduate Researcher / Independent research project  
-**Status:** Ongoing research; sole-author manuscript in preparation
+**Role:** Undergraduate Research Intern · Independent research project  
+**Status:** Sole-author manuscript in preparation  
+**Research focus:** Passive sensing · PHQ-9 prediction · Behavioral anomaly detection · Lagged temporal analysis
 
 ---
 
 ## Overview
 
-This study asks whether changes in a person's passive smartphone-sensing pattern can provide an earlier signal of subsequent change in depressive symptoms. The analysis is intentionally framed as a **within-person time-series problem** rather than a population-only classification problem.
+This study uses **BRIGHTEN V1** passive smartphone sensing data and repeated PHQ-9 assessments to model depression as a **participant-level longitudinal process**. The current work has two connected goals:
 
-The current study uses **PHQ-9 as the primary outcome**. Passive sensing variables are organized as participant-level daily sequences so that temporal order is preserved instead of reducing each observation period to a single averaged feature vector.
+1. predict PHQ-9–based depression severity using **passive sensing data only**, and
+2. detect individualized behavioral deviations and evaluate whether they **precede subsequent PHQ-9 change**.
+
+The study therefore moves beyond a population-only risk model and asks whether changes relative to a participant's own behavioral history can provide a useful signal for longitudinal mental-health monitoring.
 
 ![BRIGHTEN dataset overview](assets/figure-01-dataset-overview.webp)
 
-## Research question
+## Research questions
 
-**Do individualized behavioral anomalies in passive smartphone sensing precede subsequent PHQ-9 change?**
+- Can passive smartphone sensing alone predict PHQ-9–based depression severity?
+- Can a participant-specific behavioral baseline be used to identify meaningful behavioral anomalies?
+- Do detected anomalies occur before subsequent changes in PHQ-9 scores?
 
-The analytical target is a meaningful deviation from each participant's own habitual behavioral baseline. This supports the broader goal of detecting *when* a person's state changes, not only *who* is at higher average risk.
+## Data construction
 
-## Dataset
-
-The project uses the BRIGHTEN digital-phenotyping datasets:
+Passive sensing features and repeated PHQ-9 assessments are aligned at the participant level so that temporal ordering is preserved.
 
 | Cohort | Participants | Datapoints | Passive features | Follow-up |
 |---|---:|---:|---:|---:|
 | BRIGHTEN V1 | 541 | 3,007 | 37 | 12 weeks |
 | BRIGHTEN V2 | 276 | 1,159 | 111 | 12 weeks |
 
-**Analysis plan:** V1 for primary analysis, followed by V2 for reproducibility validation.
+**Primary analysis:** BRIGHTEN V1  
+**Planned reproducibility check:** BRIGHTEN V2
 
 > Participant-level raw data are not redistributed in this repository.
 
@@ -40,44 +45,46 @@ The project uses the BRIGHTEN digital-phenotyping datasets:
 
 ![Research objective](assets/figure-02-research-objective.webp)
 
-1. **Participant-level sequence construction** - preserve daily ordering of passive-sensing features.
-2. **Habitual baseline estimation** - characterize each participant's typical behavioral pattern.
-3. **Within-person anomaly detection** - identify short windows in which behavior deviates from that baseline.
-4. **Temporal linkage** - test whether anomaly windows precede subsequent PHQ-9 change.
-5. **Robustness and replication** - vary anomaly definitions / prediction horizons and reproduce the analysis in BRIGHTEN V2.
+1. **Longitudinal alignment** - construct participant-level sequences from passive sensing and repeated PHQ-9 assessments.
+2. **Depression-severity prediction** - develop a machine-learning model using passive sensing data only.
+3. **Personal baseline estimation** - characterize each participant's habitual behavioral pattern.
+4. **Behavioral anomaly detection** - identify deviations from the participant-specific baseline.
+5. **Lagged temporal analysis** - test whether detected anomalies precede subsequent PHQ-9 change.
+6. **Robustness / replication** - evaluate alternative anomaly definitions and reproduce the analysis when appropriate.
 
 ![Sequential representation](assets/figure-03-sequential-representation.webp)
 
 ## Current status
 
-This is an ongoing study. **No final predictive-performance claim is made in this repository.** Current work focuses on anomaly definitions, time-series representation, participant heterogeneity, missingness, and temporal validation.
+This is an ongoing study. The repository does **not** report a final predictive-performance claim yet. Current work focuses on participant heterogeneity, missingness, sequence construction, prediction modeling, anomaly definitions, and temporal validation.
 
 ## Why this matters
 
-Population-level models are useful for estimating average risk, but they can obscure clinically meaningful change within an individual. This project explores whether passive sensing can be used as a personalized monitoring signal by explicitly modeling deviations from a participant's own behavioral history.
+A single population-level prediction can identify average risk but may miss clinically meaningful **within-person change**. This project explores a personalized monitoring framework that combines passive sensing, depression-severity prediction, and individualized behavioral deviation to detect changes that may occur before worsening self-reported symptoms.
 
 ## My contribution
 
 - Research-question and analytical-framework design
-- Participant-level time-series construction
+- Participant-level longitudinal dataset construction
 - Passive-sensing feature analysis
-- Within-person anomaly-detection design
-- Temporal association analysis with subsequent PHQ-9 change
+- PHQ-9 severity prediction modeling
+- Individualized behavioral-anomaly design
+- Lagged temporal analysis with subsequent PHQ-9 change
 - Reproducibility design using BRIGHTEN V2
 - Visualization and manuscript preparation
 
-## Project outputs
+## Public outputs
 
-- [`outputs/methodology-seminar-public-excerpt.pdf`](outputs/methodology-seminar-public-excerpt.pdf) - public-safe excerpt from the methodology seminar material that documents the dataset framing and sequence-preserving analysis direction.
-- [`outputs/PROJECT_OUTPUTS.md`](outputs/PROJECT_OUTPUTS.md) - provenance, scope, and release notes for the public artifacts.
+- [`outputs/methodology-seminar-public-excerpt.pdf`](outputs/methodology-seminar-public-excerpt.pdf) - public-safe excerpt documenting the dataset framing and sequence-preserving analysis direction.
+- [`outputs/PROJECT_OUTPUTS.md`](outputs/PROJECT_OUTPUTS.md) - provenance, scope, and release notes for public artifacts.
 - Original BRIGHTEN participant-level data are not included.
 
 ## Repository scope
 
-This repository is a **research portfolio repository**. It documents the study design, selected source-derived figures, and public-safe research artifacts. Analysis code will only be published when it can be released without violating dataset-use restrictions and after the analysis interface is stabilized.
+This is a **research portfolio repository**. It documents the study design, selected source-derived figures, and public-safe artifacts. Analysis code will only be published when release is compatible with dataset-use restrictions and the analysis interface is stabilized.
 
 ---
 
 **Junha Won**  
 Ajou University, Department of Industrial Engineering  
-[Portfolio](https://juna0926.github.io/Portfolio/) · [GitHub](https://github.com/Juna0926)
+[Portfolio detail](https://juna0926.github.io/Portfolio/research/brighten.html) · [Portfolio](https://juna0926.github.io/Portfolio/) · [GitHub](https://github.com/Juna0926)

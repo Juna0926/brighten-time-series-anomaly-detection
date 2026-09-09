@@ -1,5 +1,5 @@
 # Data availability
 
-Raw participant-, patient-, or institution-level data are **not redistributed** in this public repository.
+Participant-level **BRIGHTEN V1/V2** data are **not redistributed** in this public repository.
 
-This repository documents the analytical workflow, selected figures, and public-safe project outputs. Data governed by institutional agreements, privacy restrictions, competition rules, or third-party licenses remain excluded.
+Access to the original passive-sensing and repeated PHQ-9 data is governed by the source dataset's data-use conditions. This repository therefore contains only public-safe documentation, selected figures, and derived project outputs that do not expose participant-level records.

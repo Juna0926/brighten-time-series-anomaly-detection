@@ -21,6 +21,14 @@ The project has two connected objectives:
 
 The central question is whether changes in a participant's everyday behavioral pattern can provide an early signal for longitudinal mental-health monitoring.
 
+## Portfolio-aligned main figure
+
+![BRIGHTEN longitudinal research framing](https://raw.githubusercontent.com/Juna0926/Portfolio/main/assets/brighten.svg)
+
+*Representative figure synchronized with the current Portfolio detail page.*
+
+### Supporting repository figure
+
 ![BRIGHTEN dataset overview](assets/figure-01-dataset-overview.webp)
 
 ## Research question
